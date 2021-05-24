@@ -23,7 +23,16 @@ If some of the libraries is not installed properly you can install these manuall
 $ cd Language_Portfolio                                                                                                                                                                                                                                            
 $ source sentiment_environment/bin/activate                                                                                                  
 $ pip install {module_name}                                                                                                                  
-$ deactivate                                                                                                                                    
+$ deactivate                                                                                                                                                                                                                                                                                                              
+To run the script from the command linewith default parameters, type:                                                                                                    
+$ cd Language_Portfolio                                                                                                                
+$ source sentiment_environment/bin/activate                                                                                                 
+$ cd Homework/Assignment3/src                                                                                                               
+$ python network.py
+
+If you wish to run it with your own parameters, you could specify these:
+$ python network.py --edgelist {your_file.csv} --nodes {ex: 100} --save {ex: False}
+
 
 DISCUSSION OF RESULTS:                                                                                                                       
 The assignment seems to run fine, both from the notebook and from the terminal. The visualization of the network is created and saved and the centrality measures is also created and saved fine.

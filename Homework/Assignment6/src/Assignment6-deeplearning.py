@@ -73,7 +73,7 @@ def plot_history(H, epochs):
     def main():
     
     
-        #Deffining filepath
+        #Defining filepath
         filepath = '../Data_assignment6/Game_of_Thrones_Script.csv'
 
         #Reading csv file as data frame.
@@ -99,7 +99,7 @@ def plot_history(H, epochs):
         # Then we run it on the test data.
         X_test_feats = vectorizer.transform(X_test)
 
-        # I the create a list of the featured names. 
+        # I then create a list of the featured names. 
         feature_names = vectorizer.get_feature_names()
 
 
@@ -110,36 +110,35 @@ def plot_history(H, epochs):
         l2 = L2(0.0001)
 
         # Initialize tokenizer
-        tokenizer = Tokenizer(num_words=5000) #vocabulary på 5000 ord
+        tokenizer = Tokenizer(num_words=5000) #vocabulary on 5000 words
         # Fit to training data
         tokenizer.fit_on_texts(X_train)
 
-        # tokenized training and test data
-        X_train_toks = tokenizer.texts_to_sequences(X_train) #konverter til sequences
+        # Tokenized training and test data
+        X_train_toks = tokenizer.texts_to_sequences(X_train) # Convert to sequences
         X_test_toks = tokenizer.texts_to_sequences(X_test)
 
-        # overall vocabulary size
+        # Vocabulary size
         vocab_size = len(tokenizer.word_index) + 1
 
-        # inspect
+        # Inspect
         print(X_train[2])
         print(X_train_toks[2])
-        #Dette er ikke en count representation, men er basseret på index.
 
-        # define embedding size we want to work with
+        # Define embedding size
         embedding_dim = 50
 
         embedding_matrix = create_embedding_matrix('../Data_assignment6/glove.6B.50d.txt',
                                                    tokenizer.word_index, 
                                                    embedding_dim)
-        # max length for a doc
+        # Max length for a doc
         maxlen = 100
 
-        # pad training data to maxlen
+        # Pad training data to maxlen
         X_train_pad = pad_sequences(X_train_toks, 
-                                    padding='post', # sequences can be padded "pre" or "post"
+                                    padding='post', # We choose "post" instead of "pre"
                                     maxlen=maxlen)
-        # pad testing data to maxlen
+        # Pad testing data to maxlen
         X_test_pad = pad_sequences(X_test_toks, 
                                    padding='post', 
                                    maxlen=maxlen)
@@ -155,17 +154,17 @@ def plot_history(H, epochs):
                             trainable=True))             # trainable embeddings
         model.add(Conv1D(128, 5, 
                         activation='relu',
-                        kernel_regularizer=l2))          # L2 regularization 
+                        kernel_regularizer=l2))          # Using L2 regularization 
         model.add(GlobalMaxPool1D())
         model.add(Dense(10, activation='relu', kernel_regularizer=l2))
         model.add(Dense(1, activation='softmax'))
 
-        # compile
-        model.compile(loss='categorical_crossentropy', #Changing this from "binary_crossentropy" to "categorical_crossentropy", because we have more than two types of data (8 seasons.)
-                      optimizer="adam",
+        # Compile the model
+        model.compile(loss='categorical_crossentropy', # Categorical_crossentropy because we don't have a binary.
+                      optimizer="adam", # Using the adam-optimizer
                       metrics=['accuracy'])
 
-        # print summary
+        # Print the summary
         model.summary()
 
 
@@ -175,16 +174,17 @@ def plot_history(H, epochs):
                             validation_data=(X_test_pad, y_test),
                             batch_size=10)
 
-        # evaluate 
+        # Evaluate the model
         loss, accuracy = model.evaluate(X_train_pad, y_train, verbose=False)
         print("Training Accuracy: {:.4f}".format(accuracy))
         loss, accuracy = model.evaluate(X_test_pad, y_test, verbose=False)
         print("Testing Accuracy:  {:.4f}".format(accuracy))
 
-        # plot
+        # Plot the model
         plot_history(history, epochs = 20)
         plt.savefig("../Output/training_loss5.png")
     
+    # Define behaviour when called from command line
     if __name__ =='__main__':
         
         main()

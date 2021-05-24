@@ -18,21 +18,24 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import ShuffleSplit
 from sklearn import metrics
 
-# tensorflow-tools
+# Tensorflow-tools
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import (Dense, Embedding, 
                                      Flatten, GlobalMaxPool1D, Conv1D)
-from tensorflow.keras.optimizers import SGD, Adam #Adam = optimerings algoritme
+from tensorflow.keras.optimizers import SGD, Adam #Adam = optimization algoritm
 from tensorflow.keras import backend as K
 from tensorflow.keras.utils import plot_model
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.regularizers import L2
 
-# matplotlib
+# Matplotlib
 import matplotlib.pyplot as plt
 
+# Function for plotting model history
+    # H: Model history
+    # Epochs: Number of epochs the model was trained on
 def plot_history(H, epochs):
     plt.style.use("fivethirtyeight")
     plt.figure()
