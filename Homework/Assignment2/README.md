@@ -20,8 +20,8 @@ CLONING REPO AND INSTALLING DEPENDENCIES:
 
                                                                                                                                                 
 To run scripts within this repository, I recommend cloning the repository and installing relevant dependencies in a virtual ennvironment:      
-$ git clone https://github.com/aksroa/Final_language_portfolio.git                                                                                                                                                                                                                                       
-$ cd Final_language_portfolio                                                                                                                                                                                                                                                                  
+$ git clone https://github.com/aksroa/Language_Portfolio.git                                                                                                                                                                                                                                       
+$ cd Language_Portfolio                                                                                                                                                                                                                                                                  
 $ bash ./create_lang_venv.sh                                                                                                                                                                                                                                                 
 
 
@@ -29,7 +29,7 @@ The data used in this assignment can be found here: https://github.com/computati
                                                                                                                                              you should download this.                                                                                                                                                                                                                                                                
                                                                                                                                              
 If some of the libraries are not installed properly you can install these manually by running the following in the terminal:                                                                                                                                                              
-$ cd Final_language_portfolio                                                                                                                      
+$ cd Language_Portfolio                                                                                                                      
 $ source sentiment_environment/bin/activate                                                                                                  
 $ pip install {module_name}                                                                                                                  
 $ deactivate                                                                                                                                  
@@ -39,7 +39,7 @@ DISCUSSION OF RESULTS:
 The assignment have been completed successfully and the collocates, raw frequency and MI can be found in the Output-folder. The code also runs from the command line.
 
 To run it from the command line type                                                                                                          
-$ cd Final_language_portfolio                                                                                                                
+$ cd Language_Portfolio                                                                                                                              
 $ source sentiment_environment/bin/activate                                                                                                  
 $ cd Homework/Assignment2/src                                                                                                                
 $ python Collocation.py                                                                                                                      

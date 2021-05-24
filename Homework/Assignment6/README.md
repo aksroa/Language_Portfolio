@@ -27,18 +27,18 @@ In terms of methods this assignment runs a logistic regression classifier on the
 CLONING REPO AND INSTALLING DEPENDENCIES:                                                                                                    
                                                                                                                                              
 To run scripts within this repository, I recommend cloning the repository and installing relevant dependencies in a virtual ennvironment:        
-$ git clone https://github.com/aksroa/Final_language_portfolio.git                                                                                
+$ git clone https://github.com/aksroa/Language_Portfolio.git                                                                                                      
 $ cd Final_language_portfolio                                                                                                                          
 $ bash ./create_lang_venv.sh                                                                                                                                                                                                                                                 
                                                                                                                                                           
 If some of the libraries is not installed properly you can install these manually by running the following in the terminal:                   
 
-$ cd Final_language_portfolio                                                                                                                                                                                                                                            
+$ cd Language_Portfolio                                                                                                                                                                                                                                            
 $ source sentiment_environment/bin/activate                                                                                                  
 $ pip install {module_name}                                                                                                                  
 $ deactivate    
                                                                                                                                                                                                                                                                                           To run the script from the command line, type:
-                                                                                                                                             $ cd Final_language_portfolio                                                                                                                
+                                                                                                                                             $ cd Language_Portfolio                                                                                                                                
 $ source sentiment_environment/bin/activate                                                                                                  
 $ cd Homework/Assignment6/src                                                                                                                
 $ python Assignment6-baseline.py (for baseline model)

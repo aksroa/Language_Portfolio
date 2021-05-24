@@ -17,8 +17,8 @@ CLONING REPO AND INSTALLING DEPENDENCIES:
 
                                                                                                                                                 
 To run scripts within this repository, I recommend cloning the repository and installing relevant dependencies in a virtual ennvironment:    
-$ git clone https://github.com/aksroa/Final_language_portfolio.git                                                                             
-$ cd Final_language_portfolio                                                                                                                          
+$ git clone https://github.com/aksroa/Language_Portfolio.git                                                                                    
+$ cd Language_Portfolio                                                                                                                          
 $ bash ./create_lang_venv.sh                                                                                                                                                                                                                                                 
  
  
@@ -28,7 +28,7 @@ The data used in this assignment can be found here: https://github.com/computati
 If some of the libraries is not installed properly you can install these manually by running the following in the terminal:                   
 
 
-$ cd Final_language_portfolio
+$ cd Language_Portfolio
 
 $ source sentiment_environment/bin/activate
 
