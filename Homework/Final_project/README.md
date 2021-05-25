@@ -18,5 +18,16 @@ $ cd Language_Portfolio
 $ source sentiment_environment/bin/activate                                                                                                    
 $ pip install {module_name}                                                                                                                    
 $ deactivate                                                                                                                                    
+Because the assignment has a great emphasis on visualizations, I recommend that you run it from the notebook. However, if you wish to run the script from the command line, type:                                                                                                     
+$ cd Language_Portfolio/                                                                                                                    
+$ source ./sentiment_environment/bin/activate                                                                                              
+$ cd Homework/Final_project                                                                                                          
+                                                                                                                                           
+With default dataset:                                                                                                                     
+$ python Final_project.py                                                                                                                     
+With your own datset:                                                                                                                       
+$ python Final_project --input{your_file.csv} 
+
+
 
 Discussion of results:                                                                                                                          The assignment have been completed successfully and both the sentiments and the wordclouds have been created. From the histograms of the ratings it can be seen that there is a superiority of high ratings with over 9000 reviews with 5-stars and over 6000 reviews with 4-stars. When grouping the rating and the sentimentscore together it thus shows that the lower stars have quite high values of sentiment, which may be a little bit strange. This is also supported by the two wordclouds where positive words like "good" and "perfect" occur in the wordcloud with low sentimentscores.
