@@ -23,7 +23,7 @@ import argparse
 def main(input):
 
     # I am making the filepath where the data is going to be saved.
-    df_path = os.path.join("Output/sentiments5")
+    df_path = os.path.join("Output/sentiments")
 
     # Reading the data
     data = pd.read_csv(input)
@@ -91,8 +91,8 @@ def main(input):
             plt.legend(['Sentiment']);
 
             # Save the plot as sentimentscore_by_rating in the Output folder
-            plt.savefig("Output/sentimentscore_by_rating1")
-#
+            plt.savefig("Output/sentimentscore_by_rating")
+
             # Filtrate the reviews which has a higher sentimentscore than 0.9, and add them to the list sentiments_high
             sentiments_high = data.loc[data.polarity > 0.9]
 
@@ -117,8 +117,8 @@ def main(input):
             plt.axis("off")
 
             # Save the plot as wordcloud_high in the output-folder
-            plt.savefig("Output/wordcloud_high1")
-#
+            plt.savefig("Output/wordcloud_high")
+
             # Filtrate the reviews which has a lower sentimentscore than 0.0, and add them to the list sentiments_low
             sentiments_low = data.loc[data.polarity < -0.0]
 
@@ -138,7 +138,7 @@ def main(input):
             plt.axis("off")
 
             # Save the plot as wordcloud_low in the Output-folder
-            plt.savefig("Output/wordcloud_low1")
+            plt.savefig("Output/wordcloud_low")
 
 # Define behaviour when called from command line            
 if __name__=="__main__":
