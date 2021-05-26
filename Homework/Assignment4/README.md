@@ -33,6 +33,7 @@ $ cd Homework/Assignment3/src
 $ python network.py
 
 If you wish to run it with your own parameters, you could specify these:
+
 $ python network.py --edgelist {your_file.csv} --nodes {ex: 100} --save {ex: False}
 
 
