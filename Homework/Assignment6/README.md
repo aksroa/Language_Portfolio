@@ -31,6 +31,7 @@ $ git clone https://github.com/aksroa/Language_Portfolio.git
 $ cd Final_language_portfolio                                                                                                                          
 $ bash ./create_lang_venv.sh                                                                                                                                                                                                                                                 
 In addition you will need the glove6b50dtxt. This can be downloaded here: https://www.kaggle.com/watts2/glove6b50dtxt                                                                                                                                                                                                                                                                                                                
+
 If some of the libraries are not installed properly you can install these manually by running the following in the terminal:                   
 
 $ cd Language_Portfolio                                                                                                                                                                                                                                            
