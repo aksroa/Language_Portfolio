@@ -20,10 +20,12 @@ $ bash ./create_lang_venv.sh
                                                                                                                                                           
 If some of the libraries is not installed properly you can install these manually by running the following in the terminal:                   
 
-$ cd Language_Portfolio                                                                                                                                                                                                                                            
+$ cd Language_Portfolio                                                                                                                                                   
 $ source sentiment_environment/bin/activate                                                                                                  
 $ pip install {module_name}                                                                                                                  
-$ deactivate                                                                                                                                                                                                                                                                                                              
+$ deactivate              
+
+
 To run the script from the command linewith default parameters, type:                                                                                                    
 $ cd Language_Portfolio                                                                                                                
 $ source sentiment_environment/bin/activate                                                                                                 
