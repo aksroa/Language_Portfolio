@@ -92,6 +92,8 @@ def main(input):
 
             # Save the plot as sentimentscore_by_rating in the Output folder
             plt.savefig("Output/sentimentscore_by_rating")
+            
+            plt.close()
 
             # Filtrate the reviews which has a higher sentimentscore than 0.9, and add them to the list sentiments_high
             sentiments_high = data.loc[data.polarity > 0.9]
