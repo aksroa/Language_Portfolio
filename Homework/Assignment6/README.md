@@ -28,7 +28,7 @@ CLONING REPO AND INSTALLING DEPENDENCIES:
                                                                                                                                              
 To run scripts within this repository, I recommend cloning the repository and installing relevant dependencies in a virtual ennvironment:        
 $ git clone https://github.com/aksroa/Language_Portfolio.git                                                                                                      
-$ cd Language_portfolio                                                                                                                          
+$ cd Language_Portfolio                                                                                                                          
 $ bash ./create_lang_venv.sh                                                                                                                                                                
 
 In addition you will need the glove6b50dtxt. This can be downloaded here: https://www.kaggle.com/watts2/glove6b50dtxt                                                                                                                                                                                                                                                                                                                
