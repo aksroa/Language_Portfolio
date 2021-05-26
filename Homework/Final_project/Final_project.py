@@ -118,6 +118,8 @@ def main(input):
 
             # Save the plot as wordcloud_high in the output-folder
             plt.savefig("Output/wordcloud_high")
+            
+            plt.close()
 
             # Filtrate the reviews which has a lower sentimentscore than 0.0, and add them to the list sentiments_low
             sentiments_low = data.loc[data.polarity < -0.0]
@@ -139,6 +141,8 @@ def main(input):
 
             # Save the plot as wordcloud_low in the Output-folder
             plt.savefig("Output/wordcloud_low")
+            
+            plt.close()
 
 # Define behaviour when called from command line            
 if __name__=="__main__":
