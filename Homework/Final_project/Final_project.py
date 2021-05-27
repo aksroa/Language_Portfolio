@@ -47,104 +47,104 @@ def main(input):
         for sentence in doc.sents:
             polarity_score = sentence._.sentiment.polarity
         
-            # Adding the scores to polarity
-            polarity.append(polarity_score)
-            
-            
-            # Adding polarity to coloumn in the data frame
-            polarity_values = pd.Series(polarity)
+    # Adding the scores to polarity
+    polarity.append(polarity_score)
 
-            #Pandas is used to insert polarity value to the dataset
-            data.insert(loc=0, column="polarity", value=polarity_values)
 
-            # Check the updated data frame
-            print(data.head(10))
+    # Adding polarity to coloumn in the data frame
+    polarity_values = pd.Series(polarity)
 
-            # The data consists of 20.491 reviews
-            print(len(data))
+    #Pandas is used to insert polarity value to the dataset
+    data.insert(loc=0, column="polarity", value=polarity_values)
 
-            # Save the data as a csv file
-            data.to_csv(df_path)
+    # Check the updated data frame
+    print(data.head(10))
 
-            # Read the csv file
-            sentiment_df = pd.read_csv(df_path)
+    # The data consists of 20.491 reviews
+    print(len(data))
 
-            # I group the polarity scores by the rating
-            sentiment_by_rating = sentiment_df.groupby("Rating")["polarity"].mean()
+    # Save the data as a csv file
+    data.to_csv(df_path)
 
-            # Check the grouped values
-            sentiment_by_rating.head(10)
+    # Read the csv file
+    sentiment_df = pd.read_csv(df_path)
 
-            # Plot the sentiment bu rating to get a look
-            plt.plot(sentiment_by_rating)
+    # I group the polarity scores by the rating
+    sentiment_by_rating = sentiment_df.groupby("Rating")["polarity"].mean()
 
-            # Add title
-            plt.title("Sentiment score by Rating")
+    # Check the grouped values
+    sentiment_by_rating.head(10)
 
-            # Add label to x-axis
-            plt.xlabel("Rating")
+    # Plot the sentiment bu rating to get a look
+    plt.plot(sentiment_by_rating)
 
-            # add label to y-axis
-            plt.ylabel("Sentiment score")
+    # Add title
+    plt.title("Sentiment score by Rating")
 
-            # Add a legend
-            plt.legend(['Sentiment']);
+    # Add label to x-axis
+    plt.xlabel("Rating")
 
-            # Save the plot as sentimentscore_by_rating in the Output folder
-            plt.savefig("Output/sentimentscore_by_rating")
-            
-            plt.close()
+    # add label to y-axis
+    plt.ylabel("Sentiment score")
 
-            # Filtrate the reviews which has a higher sentimentscore than 0.9, and add them to the list sentiments_high
-            sentiments_high = data.loc[data.polarity > 0.9]
+    # Add a legend
+    plt.legend(['Sentiment']);
 
-            # We can see that there is 231 reviews where the sentiment is above 0.9
-            print(len(sentiments_high))
+    # Save the plot as sentimentscore_by_rating in the Output folder
+    plt.savefig("Output/sentimentscore_by_rating")
 
-            #Take a look at the first 10
-            sentiments_high.head(10)
+    plt.close()
 
-            # Create a wordcloud which shows the most common words in reviews with sentimentscores over 0.9
+    # Filtrate the reviews which has a higher sentimentscore than 0.9, and add them to the list sentiments_high
+    sentiments_high = data.loc[data.polarity > 0.9]
 
-            # Get the text from the "Review-column"
-            text = str(sentiments_high.Review)
+    # We can see that there is 231 reviews where the sentiment is above 0.9
+    print(len(sentiments_high))
 
-            # Create and generate a word cloud image:
-            wordcloud = WordCloud().generate(text)
+    #Take a look at the first 10
+    sentiments_high.head(10)
 
-            # Display the generated image:
-            plt.imshow(wordcloud, interpolation='bilinear')
+    # Create a wordcloud which shows the most common words in reviews with sentimentscores over 0.9
 
-            # There is no axes
-            plt.axis("off")
+    # Get the text from the "Review-column"
+    text = str(sentiments_high.Review)
 
-            # Save the plot as wordcloud_high in the output-folder
-            plt.savefig("Output/wordcloud_high")
-            
-            plt.close()
+    # Create and generate a word cloud image:
+    wordcloud = WordCloud().generate(text)
 
-            # Filtrate the reviews which has a lower sentimentscore than 0.0, and add them to the list sentiments_low
-            sentiments_low = data.loc[data.polarity < -0.0]
+    # Display the generated image:
+    plt.imshow(wordcloud, interpolation='bilinear')
 
-            # We can see that there is 2930 reviews where the sentimentscore is lower than 0.0
-            print(len(sentiments_low))
+    # There is no axes
+    plt.axis("off")
 
-            # Start
-            text = str(sentiments_low.Review)
+    # Save the plot as wordcloud_high in the output-folder
+    plt.savefig("Output/wordcloud_high")
 
-            # Create and generate a word cloud image:
-            wordcloud = WordCloud(max_font_size=50, max_words=50, background_color="white").generate(text)
+    plt.close()
 
-            # Display the generated image:
-            plt.imshow(wordcloud, interpolation='bilinear')
+    # Filtrate the reviews which has a lower sentimentscore than 0.0, and add them to the list sentiments_low
+    sentiments_low = data.loc[data.polarity < -0.0]
 
-            # There is no axes
-            plt.axis("off")
+    # We can see that there is 2930 reviews where the sentimentscore is lower than 0.0
+    print(len(sentiments_low))
 
-            # Save the plot as wordcloud_low in the Output-folder
-            plt.savefig("Output/wordcloud_low")
-            
-            plt.close()
+    # Start
+    text = str(sentiments_low.Review)
+
+    # Create and generate a word cloud image:
+    wordcloud = WordCloud(max_font_size=50, max_words=50, background_color="white").generate(text)
+
+    # Display the generated image:
+    plt.imshow(wordcloud, interpolation='bilinear')
+
+    # There is no axes
+    plt.axis("off")
+
+    # Save the plot as wordcloud_low in the Output-folder
+    plt.savefig("Output/wordcloud_low")
+
+    plt.close()
 
 # Define behaviour when called from command line            
 if __name__=="__main__":
