@@ -23,7 +23,7 @@ import argparse
 def main(input):
 
     # I am making the filepath where the data is going to be saved.
-    df_path = os.path.join("Output", "sentiments98765")
+    df_path = os.path.join("Output/sentiments98765")
 
     # Reading the data
     data = pd.read_csv(input)
@@ -103,7 +103,7 @@ def main(input):
     print(len(sentiments_high))
 
     #Take a look at the first 10
-    sentiments_high.head(10)
+    print(sentiments_high.head(10))
 
     # Create a wordcloud which shows the most common words in reviews with sentimentscores over 0.9
 
@@ -120,7 +120,7 @@ def main(input):
     plt.axis("off")
 
     # Save the plot as wordcloud_high in the output-folder
-    plt.savefig("Output", "wordcloud_high")
+    plt.savefig("Output/wordcloud_high")
     
     # Using plt.close() so that I don't continue to write over the same image in matplotlib
     plt.close()
@@ -144,7 +144,7 @@ def main(input):
     plt.axis("off")
 
     # Save the plot as wordcloud_low in the Output-folder
-    plt.savefig("Output", "wordcloud_low")
+    plt.savefig("Output/wordcloud_low")
     
     # Using plt.close() so that I don't continue to write over the same image in matplotlib
     plt.close()
