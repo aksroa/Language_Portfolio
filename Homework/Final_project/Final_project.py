@@ -92,7 +92,8 @@ def main(input):
 
     # Save the plot as sentimentscore_by_rating in the Output folder
     plt.savefig("Output/sentimentscore_by_rating")
-
+    
+    # Using plt.close() so that I don't continue to write over the same image in matplotlib
     plt.close()
 
     # Filtrate the reviews which has a higher sentimentscore than 0.9, and add them to the list sentiments_high
@@ -120,7 +121,8 @@ def main(input):
 
     # Save the plot as wordcloud_high in the output-folder
     plt.savefig("Output", "wordcloud_high")
-
+    
+    # Using plt.close() so that I don't continue to write over the same image in matplotlib
     plt.close()
 
     # Filtrate the reviews which has a lower sentimentscore than 0.0, and add them to the list sentiments_low
@@ -143,7 +145,8 @@ def main(input):
 
     # Save the plot as wordcloud_low in the Output-folder
     plt.savefig("Output", "wordcloud_low")
-
+    
+    # Using plt.close() so that I don't continue to write over the same image in matplotlib
     plt.close()
 
 # Define behaviour when called from command line            
